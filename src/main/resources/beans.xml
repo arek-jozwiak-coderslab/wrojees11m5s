@@ -9,10 +9,15 @@
         </bean>
 
     <bean class="pl.coderslab.beans.EmailService" id="emailService"/>
+    <bean class="pl.coderslab.beans.SmsService" id="smsService"/>
 
     <bean class="pl.coderslab.beans.MessageSender" id="messageSender">
         <constructor-arg ref="emailService"/>
         <property name="message" value="Message from xml"/>
+    </bean>
+    <bean class="pl.coderslab.beans.MessageSender" id="messageSenderSms">
+        <constructor-arg ref="smsService"/>
+        <property name="message" value="Message from xml sms"/>
     </bean>
 
 </beans>
