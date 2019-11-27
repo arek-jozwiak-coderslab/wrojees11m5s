@@ -1,7 +1,13 @@
 package pl.coderslab.beans;
 
-public class EmailService implements NotificationService {
-    public void send(){
+public class EmailService implements MessageService {
+    @Override
+    public void send() {
         System.out.println("sending email");
+    }
+
+    @Override
+    public void send(String message) {
+        System.out.println("message  " + message);
     }
 }

@@ -8,5 +8,11 @@
             <constructor-arg name="message" value="localhost:3306"/>
         </bean>
 
+    <bean class="pl.coderslab.beans.EmailService" id="emailService"/>
+
+    <bean class="pl.coderslab.beans.MessageSender" id="messageSender">
+        <constructor-arg ref="emailService"/>
+        <property name="message" value="Message from xml"/>
+    </bean>
 
 </beans>
